@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing - Producto con Descuento</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '307436378744034');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=307436378744034&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #FFFFFF;
+      color: #000000;
+      padding: 20px;
+      padding-top: 50px;
+    }
+
+    .hero-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .product-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .pricing {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .pricing p {
+      margin: 5px 0;
+    }
+
+    .pricing .old-price {
+      font-size: 1.2rem;
+      color: #888;
+      text-decoration: line-through;
+    }
+
+    .pricing .new-price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f74911;
+    }
+
+    .buy-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+.cta-btn {
+  background-color: #075E54;
+  color: white;
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex; /* CAMBIO: de inline-flex a flex */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  animation: pulse 2s infinite;
+  margin: 0 auto; /* CENTRADO GARANTIZADO */
+  width: fit-content; /* Opcional para no ocupar más de lo necesario */
+}
+
+
+    .cta-btn:hover {
+      background-color: #075E54;
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .whatsapp-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(4, 131, 60, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(4, 131, 60, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(4, 131, 60, 0);
+      }
+    }
+
+    .product-video {
+      margin-top: 40px;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .product-video h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .product-video video {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .product-description {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.6rem;
+      }
+
+      .pricing .new-price {
+        font-size: 1.6rem;
+      }
+
+
+      .whatsapp-icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+.top-timer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f74911;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+ 
+  </style>
+</head>
+<body>
+
+  <div class="top-timer">
+  🔥 ¡50% OFF solo por tiempo limitado! <span id="countdown">--:--:--</span>
+</div>
+
+  <!-- TÍTULO -->
+  <h1 class="hero-title">¡TV Box Android – Convertí cualquier TV en una Smart con 50% OFF!</h1>
+
+  <!-- IMAGEN DEL PRODUCTO -->
+  <div class="product-image">
+    <img src="TVBOX1.JPG" alt="TV Box Android" />
+  </div>
+
+  <!-- PRECIO -->
+  <div class="pricing">
+    <p class="old-price">Antes: $100.000</p>
+    <p class="new-price">Ahora: $49.999 (50% OFF)</p>
+  </div>
+
+  <!-- BOTÓN DE WHATSAPP -->
+  <div class="buy-button">
+    <a href="https://wa.me/5491126091758?text=Hola%20me%20quiero%20comprar%20este%20TV%20Box%20con%20el%20descuento%20del%2050%%20OFF%20a%20$30.000" class="cta-btn">
+      <span>COMPRA POR WHATSAPP</span>
+      <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+  </div>
+
+  <!-- VIDEO Y DESCRIPCIÓN -->
+  <div class="product-video">
+    <h2>Mirá cómo funciona:</h2>
+    <video autoplay muted loop playsinline>
+      <source src="videola.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+
+    <p class="product-description">
+      ¿Tenés una tele vieja o querés más contenido sin pagar de más?<br/>
+      Con esta <strong>TV Box Android</strong>, transformás cualquier pantalla en un centro de entretenimiento completo.<br/><br/>
+      Instalás apps como <em>YouTube, Netflix, Disney+, Flow, Kodi, IPTV</em> y más.<br/>
+      Solo conectala por HDMI, agregá WiFi y listo: cine, series y partidos en segundos.
+      <br/><br/>
+      ✅ Android (última versión)<br/>
+      ✅ 2GB / 4GB de RAM – Rápida y fluida<br/>
+      ✅ Control remoto incluido<br/>
+      ✅ WiFi, Bluetooth y puerto USB<br/>
+      ✅ Soporta 4K / HD<br/>
+      ✅ Fácil instalación – ¡enchufás y usás!<br/><br/>
+      🎬 Tu TV, ahora sí, inteligente.
+    </p>
+  </div>
+
+<script>
+  // Set time 12 hours ahead
+  const countdownTarget = new Date().getTime() + 12 * 60 * 60 * 1000;
+
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownTarget - now;
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById("countdown").innerHTML = "00:00:00";
+    }
+  }, 1000);
+</script>
+
+  
+</body>
+</html>
